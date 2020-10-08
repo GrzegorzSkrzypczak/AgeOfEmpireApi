@@ -1,6 +1,8 @@
-package pl.grzegorz.ageofempire.empires2.repository;
+package pl.grzegorz.ageofempire.empires2.app_loader.service;
 
 import org.springframework.stereotype.Component;
+import pl.grzegorz.ageofempire.empires2.app_loader.repository.CivilisationResult;
+import pl.grzegorz.ageofempire.empires2.common.repository.Civilization;
 
 import java.util.List;
 import java.util.stream.Collectors;

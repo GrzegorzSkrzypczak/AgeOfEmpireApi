@@ -1,6 +1,4 @@
-package pl.grzegorz.ageofempire.empires2.repository;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package pl.grzegorz.ageofempire.empires2.app_loader.repository;
 
 import java.util.List;
 

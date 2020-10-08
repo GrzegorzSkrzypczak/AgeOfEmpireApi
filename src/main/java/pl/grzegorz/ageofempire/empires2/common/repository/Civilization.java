@@ -1,4 +1,4 @@
-package pl.grzegorz.ageofempire.empires2.repository;
+package pl.grzegorz.ageofempire.empires2.common.repository;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,7 +1,6 @@
-package pl.grzegorz.ageofempire.empires2.service;
+package pl.grzegorz.ageofempire.empires2.common.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.grzegorz.ageofempire.empires2.repository.Civilization;
 
 import java.util.Optional;
 

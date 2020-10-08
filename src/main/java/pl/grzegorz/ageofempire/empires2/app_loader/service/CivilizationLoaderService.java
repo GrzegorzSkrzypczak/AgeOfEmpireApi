@@ -1,8 +1,12 @@
-package pl.grzegorz.ageofempire.empires2.service;
+package pl.grzegorz.ageofempire.empires2.app_loader.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.grzegorz.ageofempire.empires2.repository.*;
+import pl.grzegorz.ageofempire.empires2.app_loader.repository.AgeOfEmpiresRepository;
+import pl.grzegorz.ageofempire.empires2.app_loader.repository.CivilisationRepositoryResponse;
+import pl.grzegorz.ageofempire.empires2.app_loader.repository.CivilisationResult;
+import pl.grzegorz.ageofempire.empires2.common.repository.Civilization;
+import pl.grzegorz.ageofempire.empires2.common.repository.CivilizationRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;

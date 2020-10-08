@@ -1,4 +1,4 @@
-package pl.grzegorz.ageofempire.empires2.repository;
+package pl.grzegorz.ageofempire.empires2.app_loader.repository;
 
 public class CivilisationResult {
 

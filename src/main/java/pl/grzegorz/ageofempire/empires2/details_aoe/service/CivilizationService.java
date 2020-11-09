@@ -22,15 +22,16 @@ public class CivilizationService {
         this.civilizationTransformer = civilizationTransformer;
     }
 
-    public List<Civilization> getCivilisations(){
+    public List<Civilization> getCivilisations() {
         return civilizationRpository.findAll();
     }
 
-    public Civilization getCivilizationByName (String name) {
+    public Civilization getCivilizationByName(String name) {
         return civilizationRpository.findByName(name)
                 .stream()
                 .findAny()
-                .orElseThrow(() -> {throw new NoSuchCivilizationExeption(name);
+                .orElseThrow(() -> {
+                    throw new NoSuchCivilizationExeption(name);
                 });
     }
 }

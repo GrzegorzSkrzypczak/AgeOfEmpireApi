@@ -21,17 +21,16 @@ public class CivilizationController {
 
     @GetMapping
     @CrossOrigin
-    public List<Civilization> getCivilizations () {
+    public List<Civilization> getCivilizations() {
         return civilizationService.getCivilisations();
     }
 
     @GetMapping("/{name}")
     @CrossOrigin
-    public Civilization getByName(@PathVariable String name){
+    public Civilization getByName(@PathVariable String name) {
         return civilizationService.getCivilizationByName(name);
 
     }
-
 
 
 }

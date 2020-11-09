@@ -11,7 +11,7 @@ public class AgeOfEmpiresRepository {
     private final String urlAddress;
     private final RestTemplate restTemplate;
 
-    public AgeOfEmpiresRepository(@Value("${aoeapi.url.address}")String urlAddress, RestTemplate restTemplate) {
+    public AgeOfEmpiresRepository(@Value("${aoeapi.url.address}") String urlAddress, RestTemplate restTemplate) {
         this.urlAddress = urlAddress;
         this.restTemplate = restTemplate;
     }
@@ -19,7 +19,6 @@ public class AgeOfEmpiresRepository {
     public CivilisationRepositoryResponse getCivilizations() {
         return restTemplate.getForObject(urlAddress, CivilisationRepositoryResponse.class);
     }
-
 
 
 }

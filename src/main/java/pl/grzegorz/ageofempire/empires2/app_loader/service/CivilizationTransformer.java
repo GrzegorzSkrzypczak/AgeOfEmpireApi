@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class CivilizationTransformer {
 
     public Civilization transformToCivilization(CivilisationResult civilisationResult) {
-        return new Civilization(civilisationResult.getId(),civilisationResult.getName(), civilisationResult.getUrl());
+        return new Civilization(civilisationResult.getId(), civilisationResult.getName(), civilisationResult.getUrl());
     }
 
     public List<Civilization> transfromToCivilizationList(List<CivilisationResult> civilisationResultList) {

@@ -11,7 +11,8 @@ public class Civilization {
     private String name;
     private String url;
 
-    public Civilization() {}
+    public Civilization() {
+    }
 
     public Civilization(int id, String name, String url) {
         this.id = id;

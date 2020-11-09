@@ -1,10 +1,12 @@
 package pl.grzegorz.ageofempire.empires2.app_loader.repository;
 
+
 public class CivilisationResult {
 
     private int id;
     private String name;
-    private String url;
+    //TODO załączyć adres url do proprtries
+    private String url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilization/";
 
 
     public int getId() {
@@ -24,7 +26,7 @@ public class CivilisationResult {
     }
 
     public String getUrl() {
-        return url;
+        return url + id;
     }
 
     public void setUrl(String url) {

@@ -14,6 +14,7 @@ public class CivilizationTransformer {
     @Value("${civilizationcontroller.url}")
     private String url;
 
+
     public Civilization transformToCivilization(CivilisationResult civilisationResult) {
         return new Civilization(civilisationResult.getId(), civilisationResult.getName(), url + civilisationResult.getId());
     }

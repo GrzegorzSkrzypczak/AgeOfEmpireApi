@@ -1,4 +1,4 @@
-package pl.grzegorz.ageofempire.empires2.details_aoe.service;
+package pl.grzegorz.ageofempire.empires2.app_loader.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

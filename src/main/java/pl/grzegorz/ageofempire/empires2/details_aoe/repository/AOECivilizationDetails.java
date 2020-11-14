@@ -3,10 +3,14 @@ package pl.grzegorz.ageofempire.empires2.details_aoe.repository;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
 public class AOECivilizationDetails {
 
+    @Id
     private String name;
     private String expansion;
     @JsonProperty("army_type")

@@ -1,33 +1,33 @@
 package pl.grzegorz.ageofempire.empires2.details_aoe.repository;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Repository;
+import pl.grzegorz.ageofempire.empires2.details_aoe.repository.unique_info.CivilizationBonus;
+import pl.grzegorz.ageofempire.empires2.details_aoe.repository.unique_info.UniqueUnit;
 
 import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.List;
 
-@Entity
-public class AOECivilizationDetails {
+@Repository
+public class AOECivilizationDetailsResponse {
 
-    @Id
     private int id;
     private String expansion;
     @JsonProperty("army_type")
     private String armyType;
 
     @JsonProperty("unique_unit")
-    @ElementCollection
-    private List<String> uniqueUnit;
+    private List<UniqueUnit> uniqueUnit;
 
     @JsonProperty("civilization_bonus")
     @ElementCollection
-    private List<String> civilizationBonus;
+    private List<CivilizationBonus> civilizationBonus;
 
-    public AOECivilizationDetails() {
+    public AOECivilizationDetailsResponse() {
     }
 
-    public AOECivilizationDetails(int id, String expansion, String armyType, List<String> uniqueUnit, List<String> civilizationBonus) {
+    public AOECivilizationDetailsResponse(int id, String expansion, String armyType, List<UniqueUnit> uniqueUnit, List<CivilizationBonus> civilizationBonus) {
+        
         this.id = id;
         this.expansion = expansion;
         this.armyType = armyType;
@@ -59,19 +59,19 @@ public class AOECivilizationDetails {
         this.armyType = armyType;
     }
 
-    public List<String> getUniqueUnit() {
+    public List<UniqueUnit> getUniqueUnit() {
         return uniqueUnit;
     }
 
-    public void setUniqueUnit(List<String> uniqueUnit) {
+    public void setUniqueUnit(List<UniqueUnit> uniqueUnit) {
         this.uniqueUnit = uniqueUnit;
     }
 
-    public List<String> getCivilizationBonus() {
+    public List<CivilizationBonus> getCivilizationBonus() {
         return civilizationBonus;
     }
 
-    public void setCivilizationBonus(List<String> civilizationBonus) {
+    public void setCivilizationBonus(List<CivilizationBonus> civilizationBonus) {
         this.civilizationBonus = civilizationBonus;
     }
 }

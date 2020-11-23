@@ -8,10 +8,10 @@ import javax.persistence.Id;
 import java.util.List;
 
 @Entity
-public class AOECivilizationDetails {
+public class CivilizationDetails {
 
     @Id
-    private int id;
+    private String name;
     private String expansion;
     @JsonProperty("army_type")
     private String armyType;
@@ -24,23 +24,23 @@ public class AOECivilizationDetails {
     @ElementCollection
     private List<String> civilizationBonus;
 
-    public AOECivilizationDetails() {
+    public CivilizationDetails() {
     }
 
-    public AOECivilizationDetails(int id, String expansion, String armyType, List<String> uniqueUnit, List<String> civilizationBonus) {
-        this.id = id;
+    public CivilizationDetails(String name, String expansion, String armyType, List<String> uniqueUnit, List<String> civilizationBonus) {
+        this.name = name;
         this.expansion = expansion;
         this.armyType = armyType;
         this.uniqueUnit = uniqueUnit;
         this.civilizationBonus = civilizationBonus;
     }
 
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getExpansion() {

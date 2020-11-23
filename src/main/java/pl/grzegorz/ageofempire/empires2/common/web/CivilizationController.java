@@ -1,12 +1,12 @@
-package pl.grzegorz.ageofempire.empires2.details_aoe.web;
+package pl.grzegorz.ageofempire.empires2.common.web;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.grzegorz.ageofempire.empires2.common.repository.Civilization;
 import pl.grzegorz.ageofempire.empires2.app_loader.service.CivilizationService;
-import pl.grzegorz.ageofempire.empires2.details_aoe.repository.AOECivilizationDetails;
-import pl.grzegorz.ageofempire.empires2.details_aoe.service.AOECivilizationDetailsService;
+import pl.grzegorz.ageofempire.empires2.details_aoe.repository.CivilizationDetails;
+import pl.grzegorz.ageofempire.empires2.details_aoe.service.CivilizationDetailsService;
 
 import java.util.List;
 

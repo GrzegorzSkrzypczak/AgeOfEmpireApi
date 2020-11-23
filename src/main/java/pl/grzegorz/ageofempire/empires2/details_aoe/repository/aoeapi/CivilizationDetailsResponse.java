@@ -1,46 +1,44 @@
-package pl.grzegorz.ageofempire.empires2.details_aoe.repository;
+package pl.grzegorz.ageofempire.empires2.details_aoe.repository.aoeapi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.stereotype.Repository;
-import pl.grzegorz.ageofempire.empires2.details_aoe.repository.unique_info.CivilizationBonus;
-import pl.grzegorz.ageofempire.empires2.details_aoe.repository.unique_info.UniqueUnit;
+import pl.grzegorz.ageofempire.empires2.details_aoe.repository.aoeapi.bonus.CivilizationBonus;
+import pl.grzegorz.ageofempire.empires2.details_aoe.repository.aoeapi.units.UnitUnits;
 
 import javax.persistence.ElementCollection;
 import java.util.List;
 
-@Repository
-public class AOECivilizationDetailsResponse {
+public class CivilizationDetailsResponse {
 
-    private int id;
+    private String name;
     private String expansion;
     @JsonProperty("army_type")
     private String armyType;
 
     @JsonProperty("unique_unit")
-    private List<UniqueUnit> uniqueUnit;
+    @ElementCollection
+    private List<UnitUnits> uniqueUnit;
 
     @JsonProperty("civilization_bonus")
     @ElementCollection
     private List<CivilizationBonus> civilizationBonus;
 
-    public AOECivilizationDetailsResponse() {
+    public CivilizationDetailsResponse() {
     }
 
-    public AOECivilizationDetailsResponse(int id, String expansion, String armyType, List<UniqueUnit> uniqueUnit, List<CivilizationBonus> civilizationBonus) {
-        
-        this.id = id;
+    public CivilizationDetailsResponse(String name, String expansion, String armyType, List<UnitUnits> uniqueUnit, List<CivilizationBonus> civilizationBonus) {
+        this.name = name;
         this.expansion = expansion;
         this.armyType = armyType;
         this.uniqueUnit = uniqueUnit;
         this.civilizationBonus = civilizationBonus;
     }
 
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getExpansion() {
@@ -59,11 +57,11 @@ public class AOECivilizationDetailsResponse {
         this.armyType = armyType;
     }
 
-    public List<UniqueUnit> getUniqueUnit() {
+    public List<UnitUnits> getUniqueUnit() {
         return uniqueUnit;
     }
 
-    public void setUniqueUnit(List<UniqueUnit> uniqueUnit) {
+    public void setUniqueUnit(List<UnitUnits> uniqueUnit) {
         this.uniqueUnit = uniqueUnit;
     }
 

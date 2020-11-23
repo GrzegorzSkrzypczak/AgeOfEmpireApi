@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import pl.grzegorz.ageofempire.empires2.common.repository.Civilization;
 import pl.grzegorz.ageofempire.empires2.common.repository.CivilizationRepository;
 import pl.grzegorz.ageofempire.empires2.common.service.NoSuchCivilizationExeption;
-import pl.grzegorz.ageofempire.empires2.details_aoe.repository.AOECivilizationDetails;
-import pl.grzegorz.ageofempire.empires2.details_aoe.repository.AOECivilizationDetailsRepository;
+import pl.grzegorz.ageofempire.empires2.details_aoe.repository.CivilizationDetails;
+import pl.grzegorz.ageofempire.empires2.details_aoe.repository.CivilizationDetailsRepository;
 
 import java.util.List;
 
@@ -15,14 +15,12 @@ import java.util.List;
 public class CivilizationService {
 
     private final CivilizationRepository civilizationRpository;
-    private final CivilizationTransformer civilizationTransformer;
-    private final AOECivilizationDetailsRepository aoeCivilizationDetailsRepository;
+
 
     @Autowired
-    public CivilizationService(CivilizationRepository civilizationRpository, CivilizationTransformer civilizationTransformer, AOECivilizationDetailsRepository aoeCivilizationDetailsRepository) {
+    public CivilizationService(CivilizationRepository civilizationRpository) {
         this.civilizationRpository = civilizationRpository;
-        this.civilizationTransformer = civilizationTransformer;
-        this.aoeCivilizationDetailsRepository = aoeCivilizationDetailsRepository;
+
     }
 
     public List<Civilization> getCivilisations() {
@@ -38,11 +36,4 @@ public class CivilizationService {
                 });
     }
 
-    public AOECivilizationDetails getCivilizationDetailsByName(int id) {
-        return aoeCivilizationDetailsRepository.findById(id)
-                .stream()
-                .findAny()
-                .orElseGet(() -> {throw new NoSuchCivilizationExeption("nie ma");
-    });
-    }
 }

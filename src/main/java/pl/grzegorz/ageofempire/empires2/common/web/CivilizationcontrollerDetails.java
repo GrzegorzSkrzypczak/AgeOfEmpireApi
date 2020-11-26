@@ -9,22 +9,22 @@ import java.util.List;
 @RestController
 public class CivilizationcontrollerDetails {
 
-        private final CivilizationDetailsService civilizationDetailsService;
-
-        public CivilizationcontrollerDetails(CivilizationDetailsService civilizationDetailsService) {
-            this.civilizationDetailsService = civilizationDetailsService;
-        }
-
-        @GetMapping("/{name}")
-        @CrossOrigin
-        public CivilizationDetails getCivilizationDetails(@PathVariable String name) {
-            return civilizationDetailsService.getCivilizationDetails(name);
-        }
-
-        @GetMapping
-        @CrossOrigin
-        public List<CivilizationDetails> getCivilizations(@RequestParam List<String> civilizationNames) {
-            return civilizationDetailsService.getCivilizationDetailsList(civilizationNames);
-        }
+//        private final CivilizationDetailsService civilizationDetailsService;
+//
+//        public CivilizationcontrollerDetails(CivilizationDetailsService civilizationDetailsService) {
+//            this.civilizationDetailsService = civilizationDetailsService;
+//        }
+//
+//        @GetMapping("/{name}")
+//        @CrossOrigin
+//        public CivilizationDetails getCivilizationDetails(@PathVariable String name) {
+//            return civilizationDetailsService.getCivilizationDetails(name);
+//        }
+//
+//        @GetMapping
+//        @CrossOrigin
+//        public List<CivilizationDetails> getCivilizations(@RequestParam List<String> civilizationNames) {
+//            return civilizationDetailsService.getCivilizationDetailsList(civilizationNames);
+//        }
 
 }

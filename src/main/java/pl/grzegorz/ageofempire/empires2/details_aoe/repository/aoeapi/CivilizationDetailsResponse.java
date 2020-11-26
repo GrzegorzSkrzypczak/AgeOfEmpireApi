@@ -1,8 +1,6 @@
 package pl.grzegorz.ageofempire.empires2.details_aoe.repository.aoeapi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import pl.grzegorz.ageofempire.empires2.details_aoe.repository.aoeapi.bonus.CivilizationBonus;
-import pl.grzegorz.ageofempire.empires2.details_aoe.repository.aoeapi.units.UnitUnits;
 
 import javax.persistence.ElementCollection;
 import java.util.List;
@@ -16,16 +14,16 @@ public class CivilizationDetailsResponse {
 
     @JsonProperty("unique_unit")
     @ElementCollection
-    private List<UnitUnits> uniqueUnit;
+    private List<String> uniqueUnit;
 
     @JsonProperty("civilization_bonus")
     @ElementCollection
-    private List<CivilizationBonus> civilizationBonus;
+    private List<String> civilizationBonus;
 
     public CivilizationDetailsResponse() {
     }
 
-    public CivilizationDetailsResponse(String name, String expansion, String armyType, List<UnitUnits> uniqueUnit, List<CivilizationBonus> civilizationBonus) {
+    public CivilizationDetailsResponse(String name, String expansion, String armyType, List<String> uniqueUnit, List<String> civilizationBonus) {
         this.name = name;
         this.expansion = expansion;
         this.armyType = armyType;
@@ -57,19 +55,19 @@ public class CivilizationDetailsResponse {
         this.armyType = armyType;
     }
 
-    public List<UnitUnits> getUniqueUnit() {
+    public List<String> getUniqueUnit() {
         return uniqueUnit;
     }
 
-    public void setUniqueUnit(List<UnitUnits> uniqueUnit) {
+    public void setUniqueUnit(List<String> uniqueUnit) {
         this.uniqueUnit = uniqueUnit;
     }
 
-    public List<CivilizationBonus> getCivilizationBonus() {
+    public List<String> getCivilizationBonus() {
         return civilizationBonus;
     }
 
-    public void setCivilizationBonus(List<CivilizationBonus> civilizationBonus) {
+    public void setCivilizationBonus(List<String> civilizationBonus) {
         this.civilizationBonus = civilizationBonus;
     }
 }

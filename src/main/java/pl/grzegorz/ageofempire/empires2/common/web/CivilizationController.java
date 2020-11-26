@@ -15,10 +15,12 @@ import java.util.List;
 public class CivilizationController {
 
     private final CivilizationService civilizationService;
+    private final CivilizationDetailsService civilizationDetailsService;
 
     @Autowired
-    public CivilizationController(CivilizationService civilizationService) {
+    public CivilizationController(CivilizationService civilizationService, CivilizationDetailsService civilizationDetailsService) {
         this.civilizationService = civilizationService;
+        this.civilizationDetailsService = civilizationDetailsService;
     }
 
     @GetMapping
@@ -32,6 +34,18 @@ public class CivilizationController {
     public Civilization getByName(@PathVariable String name) {
         return civilizationService.getCivilizationByName(name);
 
+    }
+
+    @GetMapping("civilizationDetails")
+    @CrossOrigin
+    public CivilizationDetails getCivilizationDetails(String details) {
+        return civilizationDetailsService.getCivilizationDetails(details);
+    }
+
+    @GetMapping("CivilizationDetailsList")
+    @CrossOrigin
+    public List<CivilizationDetails> getCivilizations(@RequestParam List<String> civilizationNames) {
+        return civilizationDetailsService.getCivilizationDetailsList(civilizationNames);
     }
 
 }

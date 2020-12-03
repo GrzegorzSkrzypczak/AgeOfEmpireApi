@@ -8,4 +8,5 @@ public interface CivilizationRepository extends JpaRepository<Civilization, Inte
 
     Optional<Civilization> findByName(String name);
 
+
 }

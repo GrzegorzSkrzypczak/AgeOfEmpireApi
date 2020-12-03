@@ -48,4 +48,10 @@ public class CivilizationController {
         return civilizationDetailsService.getCivilizationDetailsList(civilizationNames);
     }
 
+    @GetMapping("expansionSearch")
+    @CrossOrigin
+    public CivilizationDetails getCivilizationDetailsByExpansion(String expansion){
+        return civilizationDetailsService.getCivilizationDetailsByExpansion(expansion);
+    }
+
 }

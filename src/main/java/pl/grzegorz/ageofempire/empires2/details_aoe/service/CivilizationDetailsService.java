@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import pl.grzegorz.ageofempire.empires2.common.repository.Civilization;
 import pl.grzegorz.ageofempire.empires2.common.repository.CivilizationRepository;
 import pl.grzegorz.ageofempire.empires2.common.service.NoSuchCivilizationExeption;
+import pl.grzegorz.ageofempire.empires2.common.service.NoSuchExpansionException;
 import pl.grzegorz.ageofempire.empires2.details_aoe.repository.CivilizationDetails;
 import pl.grzegorz.ageofempire.empires2.details_aoe.repository.CivilizationDetailsRepository;
 import pl.grzegorz.ageofempire.empires2.details_aoe.repository.aoeapi.ApiCivilizationDetailsRepository;
@@ -54,6 +55,12 @@ public class CivilizationDetailsService {
         return civilizationDetails;
     }
 
+    public CivilizationDetails getCivilizationDetailsByExpansion(String expansion) {
+        return civilizationDetailsRepository.findCivilizationDetailsByExpansion(expansion).orElseThrow(() -> {
+            throw new NoSuchExpansionException(expansion);
+        });
+    }
+
 
     private CivilizationDetails provideCivilizationDetails(Civilization civilization) {
         return civilizationDetailsRepository
@@ -64,6 +71,7 @@ public class CivilizationDetailsService {
                     return civilizationDetails;
                 });
     }
+
 
     private CivilizationDetails getCivilizationDetailsFromApi(String url) {
         CivilizationDetailsResponse response = apiCivilizationDetailsRepository.getCivilizationDetailsResponse(url);

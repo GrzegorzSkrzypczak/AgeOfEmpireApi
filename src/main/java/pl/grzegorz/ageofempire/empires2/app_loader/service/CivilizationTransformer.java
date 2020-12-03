@@ -1,5 +1,6 @@
 package pl.grzegorz.ageofempire.empires2.app_loader.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import pl.grzegorz.ageofempire.empires2.app_loader.repository.CivilisationResult;
@@ -11,9 +12,12 @@ import java.util.stream.Collectors;
 @Component
 public class CivilizationTransformer {
 
-    @Value("${civilizationcontroller.url}")
-    private String url;
+    private final String url;
 
+    @Autowired
+    public CivilizationTransformer(@Value("${civilizationcontroller.url}")String url) {
+        this.url = url;
+    }
 
     public Civilization transformToCivilization(CivilisationResult civilisationResult) {
         return new Civilization(civilisationResult.getId(), civilisationResult.getName(), url + civilisationResult.getId());

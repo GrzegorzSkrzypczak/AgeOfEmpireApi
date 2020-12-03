@@ -29,11 +29,10 @@ public class CivilizationLoaderService {
 
     @PostConstruct
     public void loadCivlizations() {
-        List<CivilisationResult> civilisationResultList = new ArrayList<>();
         CivilisationRepositoryResponse civilisationResponse;
 
         civilisationResponse = ageOfEmpiresRepository.getCivilizations();
-        civilisationResultList.addAll(civilisationResponse.getCivilizations());
+        List<CivilisationResult> civilisationResultList = new ArrayList<>(civilisationResponse.getCivilizations());
 
         List<Civilization> civilizations = civilizationTransformer.transfromToCivilizationList(civilisationResultList);
         civilizationRepository.saveAll(civilizations);

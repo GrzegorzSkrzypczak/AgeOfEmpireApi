@@ -28,12 +28,13 @@ public class CivilizationService {
     }
 
     public Civilization getCivilizationByName(String name) {
-        return civilizationRpository.findByName(name)
+        return civilizationRpository.findById(name)
                 .stream()
                 .findAny()
                 .orElseThrow(() -> {
                     throw new NoSuchCivilizationExeption(name);
                 });
     }
+
 
 }

@@ -35,8 +35,9 @@ public class CivilizationDetailsService {
         this.civilizationDetailsRepository = civilizationDetailsRepository;
     }
 
+
     public CivilizationDetails getCivilizationDetails(String name) {
-        Civilization civilization = civilizationRepository.findByName(name).orElseThrow(() -> {
+        Civilization civilization = civilizationRepository.findById(name).orElseThrow(() -> {
             throw new NoSuchCivilizationExeption(name);
         });
         return provideCivilizationDetails(civilization);
@@ -45,7 +46,7 @@ public class CivilizationDetailsService {
     public List<CivilizationDetails> getCivilizationDetailsList(List<String> civilizations) {
         List<CivilizationDetails> civilizationDetails = civilizations
                 .stream()
-                .map(civilizationRepository::findByName)
+                .map(civilizationRepository::findById)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .map(this::provideCivilizationDetails)

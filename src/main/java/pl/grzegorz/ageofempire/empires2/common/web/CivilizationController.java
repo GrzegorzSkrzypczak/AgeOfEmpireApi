@@ -36,6 +36,7 @@ public class CivilizationController {
 
     }
 
+
     @GetMapping("civilizationDetails")
     @CrossOrigin
     public CivilizationDetails getCivilizationDetails(String details) {

@@ -38,15 +38,13 @@ class CivilizationRepositoryTest {
         String name2 = "Britons";
 
         //when
-        Optional<Civilization> civilizations = civilizationRepository.findByName(name2);
-        Optional<Civilization> civilization = civilizationRepository.findByName(name);
+        Optional<Civilization> civilizations = civilizationRepository.findById(name2);
+        Optional<Civilization> civilization = civilizationRepository.findById(name);
 
         //then
         assertTrue(civilizations.isPresent());
         assertEquals(name, civilization.get().getName());
         assertEquals(name2, civilizations.get().getName());
-
-
 
     }
 

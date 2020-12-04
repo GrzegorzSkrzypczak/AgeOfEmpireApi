@@ -6,8 +6,9 @@ import javax.persistence.Id;
 @Entity
 public class Civilization {
 
-    @Id
+
     private int id;
+    @Id
     private String name;
     private String url;
 

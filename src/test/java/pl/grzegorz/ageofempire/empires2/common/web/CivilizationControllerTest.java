@@ -73,7 +73,7 @@ class CivilizationControllerTest {
 //        //given
 //        String name = "Britons";
 //        Civilization civ = new Civilization(2, name, "aztecs.url");
-//        Mockito.when(civilizationService.getCivilizationByName(civ.getName())).thenReturn(civ);
+//        Mockito.when(civilizationService.getCivilizationByName(name)).thenReturn(civ);
 //
 //        //when
 //
